@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Color Box TAsk</title>
+
+    <script type = "text/javascript">
+
+    function createbox() {
+      var c = document.getElementById("ctx");
+      var ctx = c.getContext("2d");
+      ctx.fillStyle = document.getElementById("clr").value
+      ctx.fillRect(20, 20, document.getElementById("width").value, document.getElementById("height").value);
+      document.getElementById("ctx").style.display="block";
+    };
+
+    </script>
+</head>
+
+  <body>
+    <form name="create" method="GET" >
+        <label for="width">Width of box : </label>
+        <input id="width" type="integer" placeholder="enter in pixels.." required>
+        <br>
+        <br>
+        <label for="height">Height of box : </label>
+        <input id="height" type="integer" placeholder="enter in pixels.." required>
+        <br>
+        <br>
+        <label for="clr">Color of box : </label>
+        <input id="clr" type="color" required>
+        <br>
+        <br>
+        <input type="button" value="CreateBox" onclick="createbox()" />
+        <br>
+        <br>
+        <canvas id="ctx" width="300" height="150" style="border:1px solid #d3d3d3;display:none"> </canvas>
+    </form>
+  </body>
+</html>
